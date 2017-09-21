@@ -7,6 +7,8 @@ services:
     - dockercoins
     ports:
     - "8001:80"
+    deploy:
+      mode: global
 
   hasher:
     image: bataylor976/dockercoins_hasher:1.0
@@ -31,6 +33,8 @@ services:
     image: bataylor976/dockercoins_worker:1.0
     networks:
     - dockercoins
+    deploy:
+       replicas: 10
 
 networks:
     dockercoins:
