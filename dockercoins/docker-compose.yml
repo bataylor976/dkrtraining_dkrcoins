@@ -35,6 +35,9 @@ services:
     - dockercoins
     deploy:
        replicas: 10
+       update_config:
+         parallelism: 2
+         delay: 5s
 
 networks:
     dockercoins:
